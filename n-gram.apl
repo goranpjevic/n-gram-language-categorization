@@ -6,4 +6,5 @@ s←'test sentence'
 ngrams←(⊣,(≢⊢))⌸¨{⍵,/s}¨⍳5
 ⍝ sort n-grams based on their frequency, separated by size
 sorted←{⍵[(⍒2⌷⍉)⍵;]}¨ngrams
-sorted
+⍝ display the 300 most used n-grams
+300↑{⍵[(⍒2⌷⍉)⍵;]}⊃⍪/ngrams
