@@ -4,7 +4,7 @@
 a←{1↓¯1↓⍕⍵⌷⊢2⎕nq#'getcommandlineargs'}
 ⍝ read input file
 s←⊃,/⊃⎕nget(a 4)1
-⍝ filter out all non-characters and split input at each word
+⍝ filter out all non-letters and split input at each word
 filter←⎕a,819⌶⎕a,' '
 t←' '(≠⊆⊢){⍵/⍨(≢filter)≥filter⍳⍵}s
 ⍝ produce n-grams of sizes 1 to 5
