@@ -9,6 +9,6 @@ t←s⊆⍨⊃∨/(s=⊢)¨⎕a,819⌶⎕a
 ⍝ produce n-grams of sizes 1 to 5
 ngrams←⊃,/,t∘.{⍵,/' ',⍺,(⍵-1)⍴' '}⍳5
 ⍝ filter out spaces from ngrams
-n←{⍵/⍨0≠≢¨⍵}~∘' '¨ngrams
+n←~∘' '¨~∘' '⊢ngrams
 ⍝ display the 300 most common n-grams
 300↑↑⍪{(1⌷⍉⍵)[⍒2⌷⍉⍵]}{⍺(≢⍵)}⌸n
