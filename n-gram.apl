@@ -12,3 +12,6 @@ ng←(⊢,/(' '⍴⍨¯1+⊢),⍨' ',⊣)
 n←~∘' '¨~∘' '⊃,/,w∘.ng⍳5
 ⍝ display the 300 most common n-grams
 ⍪(∪n)[300↑⍒(≢⊢)⌸n]
+
+⍝ calculate distance of two arrays of n-grams
+dist←{+/|r-(⍳≢⍵)×(≢⍺)≥r←⍺⍳⍥(' '∘,¨)⍵}
