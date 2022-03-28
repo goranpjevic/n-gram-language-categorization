@@ -15,3 +15,12 @@ n←~∘' '¨~∘' '⊃,/,w∘.ng⍳5
 
 ⍝ calculate distance of two arrays of n-grams
 dist←{+/|r-(⍳≢⍵)×(≢⍺)≥r←⍺⍳⍥(' '∘,¨)⍵}
+
+⍝ read xml file
+xmlfile←⊃⎕nget'kas2'1
+⍝ get all lines with a <p> tag
+ptags←xmlfile/⍨⊃,/0≠⊃¨('<p xml:id="'⎕S{⍵.(1↑Offsets)})¨xmlfile
+⍝ remove tags from lines
+paragraphs←{⍵/⍨~{⍵∨≠\⍵}'<>'∊⍨⍵}¨ptags
+⍝ get paragraph ids for each line
+pids←{⊃'"'(≠⊆⊢){⍵/⍨{⍵∨≠\⍵}'"'∊⍨⍵}⍵}¨ptags
