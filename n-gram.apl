@@ -1,4 +1,4 @@
-#!/usr/bin/env dyalog -script
+#!/usr/bin/env dyalogscript
 
 ⍝ get ⍵-th command line argument
 a←{1↓¯1↓⍕⍵⌷⊢2⎕nq#'getcommandlineargs'}
