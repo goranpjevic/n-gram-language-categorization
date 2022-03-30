@@ -3,7 +3,7 @@
 ⍝ get ⍵-th command line argument
 a←{1↓¯1↓⍕⍵⌷⊢2⎕nq#'getcommandlineargs'}
 ⍝ read input file
-i←⊃,/⊃⎕nget(a 4)1
+i←⊃,/⊃⎕nget(a 2)1
 ⍝ partition input into strings of letters
 w←i⊆⍨⊃∨/i∘=∘⎕c¨⎕a
 ⍝ get n-grams of a word
