@@ -52,8 +52,8 @@ pf←{
 
 main←{
   'l'=2⊃⍵:l⍬
-  'x'=2⊃⍵:px 3⊃⍵
   'f'=2⊃⍵:pf 3⊃⍵
+  'x'=2⊃⍵:px 3⊃⍵
 }
 
 main ⊢2⎕nq#'getcommandlineargs'
