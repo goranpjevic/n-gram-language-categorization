@@ -1,3 +1,21 @@
                          n-gram-language-categorization
 
 n-gram based language categorization of text.
+
+note:
+
+put example files in each language for categorization in a directory named
+'languages/'.  running './n-gram.apl l' will create files in a directory named
+'models/' containing the 300 most common n-grams in each of the languages.  the
+names of the language files in the 'languages/' directory define the language
+names.
+
+usage:
+
+  ./n-gram.apl [option] [file]
+
+options:
+
+  - l : make n-gram models of all languages
+  - p : classify language of a file
+  - x : classify language of each paragraph of a thesis xml file
