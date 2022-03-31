@@ -30,12 +30,6 @@ ct←{
   ⊃¨(ln⌷⍨⊢)¨1,¨(⊢⍳⌊/)¨,/⍵∘.{⍵ dist ngrams ⍺}2⌷ln
 }
 
-⍝ classify language of a file
-f←{
-  i←⊃,/⊃⎕nget⍵1
-  ⎕←ct⊂i
-}
-
 ⍝ classify language of each paragraph of a thesis xml file
 x←{
   xmlfile←⊃⎕nget⍵1
@@ -50,7 +44,7 @@ x←{
 
 main←{
   'l'=2⊃⍵:l⍬
-  'f'=2⊃⍵:f 3⊃⍵
+  'f'=2⊃⍵:⎕←ct,/⊃⎕nget(3⊃⍵)1
   'x'=2⊃⍵:x 3⊃⍵
 }
 
