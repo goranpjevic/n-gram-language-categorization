@@ -32,14 +32,12 @@ ct←{
 
 ⍝ classify language of a file
 f←{
-  ⍝ read input file
   i←⊃,/⊃⎕nget⍵1
   ⎕←ct⊂i
 }
 
 ⍝ classify language of each paragraph of a thesis xml file
 x←{
-  ⍝ read xml file
   xmlfile←⊃⎕nget⍵1
   ⍝ get all lines with a <p> tag
   ptags←xmlfile/⍨⊃,/0≠⊃¨('<p xml:id="'⎕s{⍵.Offsets})¨xmlfile
