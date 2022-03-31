@@ -31,14 +31,14 @@ ct←{
 }
 
 ⍝ classify language of a file
-pf←{
+f←{
   ⍝ read input file
   i←⊃,/⊃⎕nget⍵1
   ⎕←ct⊂i
 }
 
 ⍝ classify language of each paragraph of a thesis xml file
-px←{
+x←{
   ⍝ read xml file
   xmlfile←⊃⎕nget⍵1
   ⍝ get all lines with a <p> tag
@@ -52,8 +52,8 @@ px←{
 
 main←{
   'l'=2⊃⍵:l⍬
-  'f'=2⊃⍵:pf 3⊃⍵
-  'x'=2⊃⍵:px 3⊃⍵
+  'f'=2⊃⍵:f 3⊃⍵
+  'x'=2⊃⍵:x 3⊃⍵
 }
 
 main ⊢2⎕nq#'getcommandlineargs'
