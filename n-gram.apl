@@ -30,6 +30,13 @@ ct←{
   ⊃¨(ln⌷⍨⊢)¨1,¨(⊢⍳⌊/)¨,/⍵∘.{⍵ dist ngrams ⍺}2⌷ln
 }
 
+⍝ classify language of a file
+pf←{
+  ⍝ read input file
+  i←⊃,/⊃⎕nget⍵1
+  ⎕←ct⊂i
+}
+
 ⍝ classify language of each paragraph of a thesis xml file
 px←{
   ⍝ read xml file
@@ -41,13 +48,6 @@ px←{
   ⍝ get paragraph ids for each line
   pids←{⊃'"'(≠⊆⊢){⍵/⍨{⍵∨≠\⍵}'"'∊⍨⍵}⍵}¨ptags
   ⎕←⍉pids,[0.5]ct paragraphs
-}
-
-⍝ classify language of a file
-pf←{
-  ⍝ read input file
-  i←⊃,/⊃⎕nget⍵1
-  ⎕←ct⊂i
 }
 
 main←{
