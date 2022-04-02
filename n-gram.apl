@@ -37,7 +37,7 @@ x←{
   ⍝ remove tags from lines
   paragraphs←{⍵/⍨~{⍵∨≠\⍵}'<>'∊⍨⍵}¨ptags
   ⍝ get paragraph ids for each line
-  pids←{⊃'"'(≠⊆⊢){⍵/⍨{⍵∨≠\⍵}'"'∊⍨⍵}⍵}¨ptags
+  pids←{2⊃'"'(≠⊆⊢)⍵}¨ptags
   ⎕←⍉pids,[0.5]ct paragraphs
 }
 
