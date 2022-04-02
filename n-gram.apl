@@ -15,7 +15,7 @@ ngrams←{
 l←{
   ⍝ get all languages
   langs←⎕sh'ls languages'
-  {(⊂ngrams⊃,/⊃⎕nget('languages/',⍵)1)⎕nput('models/',⍵)1}¨langs
+  {(⊂ngrams⊃⎕nget'languages/',⍵)⎕nput('models/',⍵)1}¨langs
 }
 
 ⍝ classify text based on the language models
@@ -43,7 +43,7 @@ x←{
 
 main←{
   'l'=2⊃⍵:l⍬
-  'f'=2⊃⍵:⎕←ct,/⊃⎕nget(3⊃⍵)1
+  'f'=2⊃⍵:⎕←ct⊂⊃⎕nget 3⊃⍵
   'x'=2⊃⍵:⎕←x 3⊃⍵
 }
 
