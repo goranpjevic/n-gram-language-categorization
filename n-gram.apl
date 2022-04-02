@@ -26,7 +26,7 @@ ct←{
   langs←⎕sh'ls models'
   ln←langs,[0.5]{⊃⎕nget('models/',⍵)1}¨langs
   ⍝ return classified language for each input
-  ⊃¨(ln⌷⍨⊢)¨1,¨(⊢⍳⌊/)¨,/⍉(2⌷ln)∘.dist ngrams¨⍵
+  (⊃ln⌷⍨1,⊢⍳⌊/)¨,/⍉(2⌷ln)∘.dist ngrams¨⍵
 }
 
 ⍝ classify language of each paragraph of a thesis xml file
