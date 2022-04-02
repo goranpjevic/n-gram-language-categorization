@@ -47,4 +47,4 @@ main←{
   'x'=2⊃⍵:⎕←x 3⊃⍵
 }
 
-main ⊢2⎕nq#'getcommandlineargs'
+main 2⎕nq#'getcommandlineargs'
