@@ -24,9 +24,9 @@ ct←{
   dist←{+/|r-(⍳≢⍵)×(≢⍺)≥r←⍺⍳⍥(' '∘,¨)⍵}
   ⍝ get all languages and their most common n-grams
   langs←⎕sh'ls models'
-  ln←langs,[0.5]{⊃⎕nget('models/',⍵)1}¨langs
+  ln←{⊃⎕nget('models/',⍵)1}¨langs
   ⍝ return classified language for each input
-  (⊃ln⌷⍨1,⊢⍳⌊/)¨,/⍉(2⌷ln)∘.dist ngrams¨⍵
+  (⊃langs⌷⍨⊢⍳⌊/)¨,/⍉ln∘.dist ngrams¨⍵
 }
 
 ⍝ classify language of each paragraph of a thesis xml file
