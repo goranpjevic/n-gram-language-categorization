@@ -8,7 +8,7 @@ ngrams←{
   ng←(⊢,/(' '⍴⍨¯1+⊢),⍨' ',⊣)
   ⍝ get n-grams of all words of sizes 1 to 5
   n←~∘' '¨~∘' '⊃,/,w∘.ng⍳5
-  300{⍺≤≢⍵:⍺↑⍵⋄(≢⍵)↑⍵}(∪n)[⍒(≢⊢)⌸n]
+  300{⍺≤≢⍵:⍺↑⍵⋄⍵}(∪n)[⍒(≢⊢)⌸n]
 }
 
 ⍝ make n-gram models of all languages
