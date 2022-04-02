@@ -33,7 +33,7 @@ ct←{
 x←{
   xmlfile←⊃⎕nget⍵1
   ⍝ get all lines with a <p> tag
-  ptags←xmlfile/⍨⊃,/0≠⊃¨('<p xml:id="'⎕s{⍵.Offsets})¨xmlfile
+  ptags←⊃,/('<p xml:id="'⎕s{⍵.Block})¨xmlfile
   ⍝ remove tags from lines
   paragraphs←{⍵/⍨~{⍵∨≠\⍵}'<>'∊⍨⍵}¨ptags
   ⍝ get paragraph ids for each line
