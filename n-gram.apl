@@ -38,13 +38,13 @@ x←{
   paragraphs←{⍵/⍨~{⍵∨≠\⍵}'<>'∊⍨⍵}¨ptags
   ⍝ get paragraph ids for each line
   pids←{2⊃'"'(≠⊆⊢)⍵}¨ptags
-  ⎕←⍉pids,[0.5]ct paragraphs
+  ⍉pids,[0.5]ct paragraphs
 }
 
 main←{
   'l'=2⊃⍵:l⍬
   'f'=2⊃⍵:⎕←ct,/⊃⎕nget(3⊃⍵)1
-  'x'=2⊃⍵:x 3⊃⍵
+  'x'=2⊃⍵:⎕←x 3⊃⍵
 }
 
 main ⊢2⎕nq#'getcommandlineargs'
