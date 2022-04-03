@@ -13,9 +13,9 @@ ngrams←{
 
 ⍝ make n-gram models of all languages
 l←{
-  ⍝ get all languages
-  langs←⎕sh'ls languages'
-  {(⊂ngrams⊃⎕nget'languages/',⍵)⎕nput('models/',⍵)1}¨langs
+  ⍝ get all language file names
+  lf←,⍥⊂⌿(⊃⍵)(2⊃⍵)∘.,⎕sh'ls ',⊃⍵
+  {(⊂ngrams⊃⎕nget⊃⍵)⎕nput(2⊃⍵)1}¨lf
 }
 
 ⍝ classify text based on the language models
@@ -42,7 +42,7 @@ x←{
 }
 
 main←{
-  'l'=2⊃⍵:l⍬
+  'l'=2⊃⍵:l'languages/' 'models/'
   'f'=2⊃⍵:⎕←ct⊂⊃⎕nget 3⊃⍵
   'x'=2⊃⍵:⎕←x 3⊃⍵
 }
