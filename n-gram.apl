@@ -3,7 +3,7 @@
 ⍝ get the 300 most common n-grams of text
 ngrams←{
   ⍝ partition input into strings of letters
-  w←⍵⊆⍨⊃∨/(⍵=⍥⎕c⊢)¨⎕a
+  w←⍵⊆⍨⊃∨/(⍵=⍥⎕c⊢)¨⎕a,'čšžàâæçéèêëîïôœùûüÿäöß'
   ⍝ get n-grams of a word
   ng←(⊢,/(' '⍴⍨¯1+⊢),⍨' ',⊣)
   ⍝ get n-grams of all words of sizes 1 to 5
